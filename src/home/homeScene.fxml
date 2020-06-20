@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="home.HomeSceneController">
+    <top>
+    	<VBox>
+    		<children>
+    			<HBox fx:id="titleBar" alignment="CENTER_RIGHT"></HBox>
+    			<HBox style="-fx-background-color:#000000">
+    				<children>
+    					<Label fx:id="titleText"></Label>
+    				</children>
+    			</HBox>
+    			<AnchorPane style="-fx-background-color:#800D29">
+    				<HBox fx:id="menuPane" AnchorPane.leftAnchor="0">
+    					<children>
+    						<Button fx:id="homeB" text="Home"></Button>
+    						<Button fx:id="workoutB" text="Workout"></Button>
+    						<Button fx:id="dietB" text="Diet"></Button>
+    					</children>
+    				</HBox>
+    				<MenuButton fx:id="settingsB" AnchorPane.topAnchor="6"  AnchorPane.rightAnchor="20">
+    					<items>
+    						<MenuItem fx:id="logoutMI" text="Log Out"></MenuItem>
+    						<MenuItem fx:id="deleteAccountMI" text="Delete Account"></MenuItem>
+    					</items>
+    				</MenuButton>
+    			</AnchorPane>
+    		</children>	
+    	</VBox>   
+    </top>
+    <left>
+        
+    </left>
+    <center>
+       <ScrollPane fx:id="homeScroller" style="-fx-background-color:#CCCCCC;-fx-padding:0" fitToHeight="true" fitToWidth="true" >
+    	<VBox id="centerVB" alignment="TOP_CENTER" spacing="50">
+    		<children>
+    			<VBox maxWidth="600" minHeight="100" spacing="20">
+    				<children>
+     					<Label fx:id="welcomeText"></Label>
+     					<Label text="This application was made to help you keep track of your workout and meal plan. Set your goals and calculate your recomended calories below." wrapText="true"></Label>
+    				</children>
+    			</VBox>
+    			<VBox id="goalVB" spacing="20">
+    				<children>
+    					<Label text="What is your general purpose for using this app?"></Label>
+    					<ComboBox fx:id="goalCBox"></ComboBox>
+    					<Label text="Goals:"></Label>
+    					<TextArea fx:id="personalGoalsTA" minHeight="200"></TextArea>
+    					<Button text="save" fx:id="saveGoalB"></Button>
+    				</children>
+    			</VBox>
+    			<VBox fx:id="calorieCalcVB" spacing="40">
+    				<children>
+    					<GridPane fx:id="calorieCalcGP">
+    						<Label text="Age:" 
+    								GridPane.columnIndex="0" GridPane.rowIndex="0"></Label>
+    						<TextField fx:id="ageTF" style="-fx-max-width:100"
+    									GridPane.columnIndex="1" GridPane.rowIndex="0"></TextField>
+    						<Label text="Gender:"
+    									GridPane.columnIndex="0" GridPane.rowIndex="1"></Label>
+    						<fx:define>
+       							 <ToggleGroup fx:id="group" />
+   							</fx:define>
+   							<HBox spacing="10" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+   								<children>
+   									<Label text="Male" style="-fx-font-weight:NORMAL"></Label>
+    								<RadioButton fx:id="maleRB" toggleGroup="$group"></RadioButton>
+    							</children>
+    						</HBox>
+    						<HBox spacing="10" alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+    							<children>
+    								<Label text="Female" style="-fx-font-weight:NORMAL"></Label>
+    								<RadioButton fx:id="femaleRB" toggleGroup="$group"></RadioButton>
+    							</children>
+    						</HBox>
+    						<Label text="Height:" 
+    									GridPane.columnIndex="0" GridPane.rowIndex="2"></Label>
+    						<TextField style="-fx-max-width:100" fx:id="feetTF"
+    									GridPane.columnIndex="1" GridPane.rowIndex="2"></TextField>
+    						<TextField style="-fx-max-width:100" fx:id="inchTF"
+    									GridPane.columnIndex="2" GridPane.rowIndex="2"></TextField>
+    						<Label text="Weight:"
+    									GridPane.columnIndex="0" GridPane.rowIndex="3"></Label>
+    						<TextField style="-fx-max-width:100" fx:id="ibsTF"
+    									GridPane.columnIndex="1" GridPane.rowIndex="3"></TextField>
+    					</GridPane>
+    					<HBox spacing="17">
+    						<children>
+    							<Label text="Activity:"></Label>
+    							<ComboBox fx:id="activityCBox"></ComboBox>
+    						</children>
+    					</HBox>
+    					<HBox style="-fx-spacing:20">
+    						<children>
+    							<Button fx:id="calculateB" text="Calculate"></Button>
+    							<Label fx:id="warningL"></Label>
+    						</children>
+    					</HBox>
+    				</children>
+    			</VBox>
+    			<GridPane alignment="TOP_CENTER" fx:id="calcResultsGP">
+    				<Label text="Max Weight Gain:"
+    						GridPane.columnIndex="0" GridPane.rowIndex="0"></Label>
+    				<Label fx:id="maxWGL"
+    						GridPane.columnIndex="1" GridPane.rowIndex="0"></Label>
+    				<Label text="Min Weight Gain:"
+    						GridPane.columnIndex="0" GridPane.rowIndex="1"></Label>
+    				<Label fx:id="minWGL"
+    						GridPane.columnIndex="1" GridPane.rowIndex="1"></Label>
+    				<Label text="Maintain:" style="-fx-text-fill:#FFFFFF;-fx-font-size:24"
+    						GridPane.columnIndex="0" GridPane.rowIndex="2"></Label>
+    				<Label fx:id="maintainWL" style="-fx-text-fill:#FFFFFF;-fx-font-size:24"
+    						GridPane.columnIndex="1" GridPane.rowIndex="2"></Label>
+    				<Label text="Min Weight Loss:"
+    						GridPane.columnIndex="0" GridPane.rowIndex="3"></Label>
+    				<Label fx:id="minWLL"
+    						GridPane.columnIndex="1" GridPane.rowIndex="3"></Label>
+    				<Label text="Max Weight Loss:"
+    						GridPane.columnIndex="0" GridPane.rowIndex="4"></Label>
+    				<Label fx:id="maxWLL"
+    						GridPane.columnIndex="1" GridPane.rowIndex="4"></Label>
+    				<Button fx:id="backToCalcB" text="close"
+    						GridPane.columnIndex="1" GridPane.rowIndex="5"></Button>
+    			</GridPane>
+    		</children>
+    	</VBox>
+       </ScrollPane>
+    </center>
+    <bottom>
+        
+    </bottom>
+</BorderPane>

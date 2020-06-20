@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="diet.DietSceneController" fx:id="root">
+    <top>
+    	<VBox>
+    		<children>
+    			<HBox fx:id="titleBar" alignment="CENTER_RIGHT"></HBox>
+    			<HBox style="-fx-background-color:#000000">
+    				<children>
+    					<Label fx:id="titleText"></Label>
+    				</children>
+    			</HBox>
+    			<AnchorPane style="-fx-background-color:#800D29">
+    			<HBox fx:id="menuPane" style="-fx-background-color:#800D29" AnchorPane.leftAnchor="0">
+    					<children>
+    						<Button fx:id="homeB" text="Home"></Button>
+    						<Button fx:id="workoutB" text="Workout"></Button>
+    						<Button fx:id="dietB" text="Diet"></Button>
+    					</children>
+    				</HBox>
+    				<MenuButton fx:id="settingsB" AnchorPane.topAnchor="6"  AnchorPane.rightAnchor="20">
+    					<items>
+    						<MenuItem fx:id="logoutMI" text="Log Out"></MenuItem>
+    						<MenuItem fx:id="deleteAccountMI" text="Delete Account"></MenuItem>
+    					</items>
+    				</MenuButton>
+    			</AnchorPane>
+    		</children>	
+    	</VBox>   
+    </top>
+    <left>
+    <ScrollPane fx:id="archiveSP" style="-fx-background-color:#800D29" fitToHeight="true" fitToWidth="true">
+    	<VBox fx:id="archiveVB" alignment="TOP_CENTER" style="-fx-background-color:#800D29">
+    		<children>
+    			<Label id="archiveL" text="Archives" style="-fx-underline:true"></Label>
+    		</children>
+    	</VBox>
+    </ScrollPane>    
+    </left>
+    <center>
+    <StackPane>
+     <ScrollPane fx:id="dietScroller" style="-fx-background-color:#CCCCCC;-fx-padding:0" fitToHeight="true" fitToWidth="true" >
+   		<content>
+       		 <VBox alignment="TOP_CENTER" fx:id="Center" style="-fx-background-color:#CCCCCC">
+      		 	<children>
+      		 		<GridPane fx:id="foodInputs" alignment="CENTER">
+       					<Label text="Servings"
+       								GridPane.columnIndex="0" GridPane.rowIndex="0"></Label>
+       					<Label text="Food Item"
+       								GridPane.columnIndex="1" GridPane.rowIndex="0"></Label>
+       					<Label text="Carbs"
+       								GridPane.columnIndex="2" GridPane.rowIndex="0"></Label>
+       					<Label text="Protiens"
+       								GridPane.columnIndex="3" GridPane.rowIndex="0"></Label>
+       					<Label text="Fats"
+      		 						GridPane.columnIndex="4" GridPane.rowIndex="0"></Label>
+       					<TextField fx:id="servingSizeTF" prefWidth="70" 
+       								GridPane.columnIndex="0" GridPane.rowIndex="1"></TextField>	
+       					<TextField fx:id="foodTF" prefWidth="200"
+       								GridPane.columnIndex="1" GridPane.rowIndex="1"></TextField>
+       					<TextField fx:id="carbsTF" prefWidth="70" 
+      		 						GridPane.columnIndex="2" GridPane.rowIndex="1"></TextField>
+  		     			<TextField fx:id="protienTF" prefWidth="70" 
+       								GridPane.columnIndex="3" GridPane.rowIndex="1"></TextField>
+       					<TextField fx:id="fatsTF" prefWidth="70" 
+       								GridPane.columnIndex="4" GridPane.rowIndex="1"></TextField>
+						<Button fx:id="addB" text="add"
+									GridPane.columnIndex="0" GridPane.rowIndex="2"></Button>
+       					<Label fx:id="alertLabel"
+       								GridPane.columnIndex="1" GridPane.rowIndex="2"></Label>
+       				</GridPane>
+       				<VBox maxWidth="552">
+       					<children>
+       						<Label fx:id="dateLabel"></Label>
+       						<TableView fx:id="DietTable">
+       							<columns>
+       								<TableColumn prefWidth="70" text="Servings" reorderable="false" sortable="false" fx:id="ServingSizeColumn" />
+        							<TableColumn prefWidth="200" text="Food Item" reorderable="false" sortable="false" fx:id="FoodColumn" />
+        							<TableColumn prefWidth="70" text="Carbs" reorderable="false" sortable="false" fx:id="CarbsColumn" />
+        							<TableColumn prefWidth="70" text="Protiens" reorderable="false" sortable="false" fx:id="ProtienColumn" />
+        							<TableColumn prefWidth="70" text="Fats" reorderable="false" sortable="false" fx:id="FatsColumn" />
+        							<TableColumn prefWidth="70" text="Calories" reorderable="false" sortable="false" fx:id="CaloriesColumn" />
+       							</columns>
+     						</TableView>
+       						<HBox fx:id="totalBox">
+       							<children>
+       								<Label fx:id="totalL" text="Total"></Label>
+       								<Label fx:id="carbsTotalL" text="0"></Label>
+       								<Label fx:id="protiensTotalL" text="0"></Label>
+       								<Label fx:id="fatsTotalL" text="0"></Label>
+       								<Label fx:id="calTotalL" text="0"></Label>
+       							</children>
+       						</HBox>
+       					</children>
+       				</VBox>
+       			</children>
+        		</VBox>
+       	    </content>
+   		</ScrollPane>
+   		<StackPane fx:id="archiveStPn" alignment="CENTER_LEFT">
+   			<ToggleButton fx:id="archiveB"></ToggleButton>
+   		</StackPane>
+   	   </StackPane>
+    </center>
+    <bottom>
+        
+    </bottom>
+</BorderPane>

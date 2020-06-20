@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="workout.WorkoutSceneController">
+    <top>
+    	<VBox>
+    		<children>
+    			<HBox fx:id="titleBar" alignment="CENTER_RIGHT"></HBox>
+    			<HBox style="-fx-background-color:#000000">
+    				<children>
+    					<Label fx:id="titleText"></Label>
+    				</children>
+    			</HBox>
+    			<AnchorPane style="-fx-background-color:#800D29">
+    			<HBox fx:id="menuPane" style="-fx-background-color:#800D29" AnchorPane.leftAnchor="0">
+    					<children>
+    						<Button fx:id="homeB" text="Home"></Button>
+    						<Button fx:id="workoutB" text="Workout"></Button>
+    						<Button fx:id="dietB" text="Diet"></Button>
+    					</children>
+    				</HBox>
+    				<MenuButton fx:id="settingsB" AnchorPane.topAnchor="6" AnchorPane.rightAnchor="20">
+    					<items>
+    						<MenuItem fx:id="logoutMI" text="Log Out"></MenuItem>
+    						<MenuItem fx:id="deleteAccountMI" text="Delete Account"></MenuItem>
+    					</items>
+    				</MenuButton>
+    			</AnchorPane>
+    		</children>	
+    	</VBox>   
+    </top>
+    <left>
+        
+    </left>
+    <center>
+    	<ScrollPane style="-fx-background-color:#CCCCCC;-fx-padding:0" fitToHeight="true" fitToWidth="true" >
+    		<HBox alignment="TOP_CENTER" style="-fx-background-color:#CCCCCC;-fx-padding:0">
+    			<children>
+    				<VBox fx:id="leftVBox" style="-fx-padding:0 40 50 0;">
+    					<children>
+    						<VBox fx:id="chart1">
+    							<children>
+    								<TableView fx:id="WT1">
+    									<columns>
+    										<TableColumn prefWidth="180" text="workout" reorderable="false" sortable="false" fx:id="WC1_0"/>
+    										<TableColumn prefWidth="70" text="reps" reorderable="false" sortable="false" fx:id="WC1_1"/>
+    									</columns>
+    								</TableView>
+    								<HBox>
+    									<children>
+    										<Button text="add" fx:id="WB1"></Button>
+    										<TextField prefWidth="180" fx:id="WTF1_0"></TextField>
+    										<TextField prefWidth="70" fx:id="WTF1_1"></TextField>
+    									</children>
+    								</HBox>
+    							</children>
+    						</VBox>
+    						<VBox fx:id="chart3">
+    							<children>
+    								<TableView fx:id="WT3">
+    									<columns>
+    										<TableColumn prefWidth="180" text="workout" reorderable="false" sortable="false" fx:id="WC3_0"/>
+    										<TableColumn prefWidth="70" text="reps" reorderable="false" sortable="false" fx:id="WC3_1"/>
+    									</columns>
+    								</TableView>
+    								<HBox>
+    									<children>
+    										<Button text="add" fx:id="WB3"></Button>
+    										<TextField prefWidth="180" fx:id="WTF3_0"></TextField>
+    										<TextField prefWidth="70" fx:id="WTF3_1"></TextField>
+    									</children>
+    								</HBox>
+    							</children>
+    						</VBox>
+    						<VBox fx:id="chart5">
+    							<children>
+    								<TableView fx:id="WT5">
+    									<columns>
+    										<TableColumn prefWidth="180" text="workout" reorderable="false" sortable="false" fx:id="WC5_0"/>
+    										<TableColumn prefWidth="70" text="reps" reorderable="false" sortable="false" fx:id="WC5_1"/>
+    									</columns>
+    								</TableView>
+    								<HBox>
+    									<children>
+    										<Button text="add" fx:id="WB5"></Button>
+    										<TextField prefWidth="180" fx:id="WTF5_0"></TextField>
+    										<TextField prefWidth="70" fx:id="WTF5_1"></TextField>
+    									</children>
+    								</HBox>
+    							</children>
+    						</VBox>
+    						<VBox fx:id="chart7">
+    							<children>
+    								<TableView fx:id="WT7">
+    									<columns>
+    										<TableColumn prefWidth="180" text="workout" reorderable="false" sortable="false" fx:id="WC7_0"/>
+    										<TableColumn prefWidth="70" text="reps" reorderable="false" sortable="false" fx:id="WC7_1"/>
+    									</columns>
+    								</TableView>
+    								<HBox>
+    									<children>
+    										<Button text="add" fx:id="WB7"></Button>
+    										<TextField prefWidth="180" fx:id="WTF7_0"></TextField>
+    										<TextField prefWidth="70" fx:id="WTF7_1"></TextField>
+    									</children>
+    								</HBox>
+    							</children>
+    						</VBox>
+    					</children>
+    				</VBox>
+    				<VBox fx:id="rightVBox" style="-fx-padding:0 0 50 40;">
+    					<children>
+    						<VBox fx:id="chart2">
+    							<children>
+    								<TableView fx:id="WT2">
+    									<columns>
+    										<TableColumn prefWidth="180" text="workout" reorderable="false" sortable="false" fx:id="WC2_0"/>
+    										<TableColumn prefWidth="70" text="reps" reorderable="false" sortable="false" fx:id="WC2_1"/>
+    									</columns>
+    								</TableView>
+    								<HBox>
+    									<children>
+    										<Button text="add" fx:id="WB2"></Button>
+    										<TextField prefWidth="180" fx:id="WTF2_0"></TextField>
+    										<TextField prefWidth="70" fx:id="WTF2_1"></TextField>
+    									</children>
+    								</HBox>
+    							</children>
+    						</VBox>
+    						<VBox fx:id="chart4">
+    							<children>
+    								<TableView fx:id="WT4">
+    									<columns>
+    										<TableColumn prefWidth="180" text="workout" reorderable="false" sortable="false" fx:id="WC4_0"/>
+    										<TableColumn prefWidth="70" text="reps" reorderable="false" sortable="false" fx:id="WC4_1"/>
+    									</columns>
+    								</TableView>
+    								<HBox>
+    									<children>
+    										<Button text="add" fx:id="WB4"></Button>
+    										<TextField prefWidth="180" fx:id="WTF4_0"></TextField>
+    										<TextField prefWidth="70" fx:id="WTF4_1"></TextField>
+    									</children>
+    								</HBox>
+    							</children>
+    						</VBox>
+    						<VBox fx:id="chart6">
+    							<children>
+    								<TableView fx:id="WT6">
+    									<columns>
+    										<TableColumn prefWidth="180" text="workout" reorderable="false" sortable="false" fx:id="WC6_0"/>
+    										<TableColumn prefWidth="70" text="reps" reorderable="false" sortable="false" fx:id="WC6_1"/>
+    									</columns>
+    								</TableView>
+    								<HBox>
+    									<children>
+    										<Button text="add" fx:id="WB6"></Button>
+    										<TextField prefWidth="180" fx:id="WTF6_0"></TextField>
+    										<TextField prefWidth="70" fx:id="WTF6_1"></TextField>
+    									</children>
+    								</HBox>
+    							</children>
+    						</VBox>
+    					</children>
+    				</VBox>
+    			</children>
+    		</HBox>
+       </ScrollPane>
+    </center>
+    <bottom>
+        
+    </bottom>
+</BorderPane>
